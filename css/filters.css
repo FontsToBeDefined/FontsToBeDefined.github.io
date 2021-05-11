@@ -1,0 +1,59 @@
+@font-face {
+  font-family: rotorizer_0;
+  src: url(../fonts/rotorizer/0.ttf);
+}
+@font-face {
+  font-family: rotorizer_1;
+  src: url(../fonts/rotorizer/1.ttf);
+}
+@font-face {
+  font-family: rastr_0;
+  src: url(../fonts/rastr/0.ttf);
+}
+@font-face {
+  font-family: outliner_0;
+  src: url(../fonts/outliner/0.ttf);
+}
+@keyframes rotate {
+  0% {
+    font-variation-settings: "RTTX" 0;
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  25% {
+    font-variation-settings: "RTTX" 90;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  50% {
+    font-variation-settings: "RTTX" 180;
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  75% {
+    font-variation-settings: "RTTX" 270;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    font-variation-settings: "RTTX" 360;
+  }
+}
+.rotorizer_0 {
+  font-family: rotorizer_0;
+}
+
+.rotorizer_1 {
+  font-family: rotorizer_1;
+  color: #eee;
+}
+
+.rotorizer_0.animate, .rotorizer_1.animate {
+  animation: rotate 3s infinite normal !important;
+}
+
+.rastr_0 {
+  font-family: rastr_0;
+}
+
+.outliner_0 {
+  font-family: outliner_0;
+}
+
+/*# sourceMappingURL=filters.css.map */

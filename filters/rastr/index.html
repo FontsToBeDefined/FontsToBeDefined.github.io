@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="/css/generic.css" rel="stylesheet"/>
+  <link href="/css/wrappers.css" rel="stylesheet"/>
+  <script href="/js/generic.js">
+  </script>
+  <title>
+   Document
+  </title>
+ </head>
+ <body>
+  <header>
+   <a href="/">
+    nofont foundry
+   </a>
+   – rastr
+  </header>
+  <div role="hr">
+  </div>
+  <main>
+   <link href="/css/filters.css" rel="stylesheet"/>
+   <script type="text/javascript">
+    const filter_id = "rastr"
+   </script>
+   <div class="filter-wrapper">
+    <span class="filter">
+     <span id="newFonts">
+      <span class="rastr_0">
+       rastr
+      </span>
+     </span>
+     <span id="originalFont">
+      <span>
+       rastr
+      </span>
+     </span>
+    </span>
+   </div>
+   <div role="hr">
+   </div>
+   <div role="hr">
+   </div>
+   <form action="" enctype="multipart/form-data" id="font-form">
+    <label for="preview_string">
+     preview text
+    </label>
+    <div class="text-input-wrapper" data-value="">
+     <input name="preview_string" placeholder="preview text" required="" type_="text" value__="Abc!"/>
+    </div>
+    <label for="font_file">
+     font file
+    </label>
+    <div class="file-input-wrapper" data-file-name="" data-value="">
+     <input id="font_file" name="font_file" required="" type="file"/>
+    </div>
+    <label for="font_size">
+     resolution
+    </label>
+    <div class="range-input-wrapper" data-current="10" data-max="200" data-min="10">
+     <input class="range-input" max="200" min="10" name="font_size" oninput="updateSelf(this)" type="range" value="40"/>
+     <input max="200" min="10" oninput="{updateSelf(this), validateNumberInput(this)}" type="number" value="40"/>
+    </div>
+    <div class="submit-input-wrapper">
+     <input type="submit" value="preview font with current settings"/>
+    </div>
+    <div class="button-input-wrapper">
+     <input onclick="buy(this)" type="button" value="buy font with current settings (3eur)"/>
+    </div>
+   </form>
+   <div role="hr">
+   </div>
+   <style>
+    :root {
+            --secondary-color: pink;
+        }
+   </style>
+   <div id="preview-style">
+   </div>
+   <script async="" src="https://js.stripe.com/v3/">
+   </script>
+   <p id="order-info">
+    You are about to buy modified version of your font that you uploaded
+   </p>
+   <form class="invalid" id="payment-form" style="visibility: hidden;">
+    <label for="name">
+     name
+    </label>
+    <input id="name" name="name" placeholder="name" required="" type="text" value="John Test"/>
+    <label for="email">
+     email
+    </label>
+    <input id="email" name="email" placeholder="email" required="" type="email" value="johnTest@gmail.com"/>
+    <label>
+     card
+    </label>
+    <div id="card-element">
+    </div>
+    <div id="card-message" role="alert">
+    </div>
+    <div class="not-valid submit-input-wrapper">
+     <input id="submitPayment" type="submit" value="submit payment of 3eur"/>
+    </div>
+   </form>
+   <script src="/js/stripe.js">
+   </script>
+   <script src="/js/detail.js">
+   </script>
+   <script src="/js/filter.js">
+   </script>
+  </main>
+  <footer>
+   this is some info
+  </footer>
+ </body>
+</html>

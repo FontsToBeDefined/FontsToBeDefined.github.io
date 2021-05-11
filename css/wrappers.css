@@ -1,0 +1,155 @@
+*[class*=wrapper]:not([class*=filter]) {
+  color: #000;
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes loading {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.submit-input-wrapper, .button-input-wrapper {
+  border-radius: 1em;
+  border: 1px #000 solid;
+  position: relative;
+  overflow: hidden;
+}
+.submit-input-wrapper > input, .button-input-wrapper > input {
+  text-align: center;
+}
+.submit-input-wrapper.loading::after, .button-input-wrapper.loading::after {
+  content: "";
+  background: var(--secondary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  animation: loading 1s ease-in-out alternate infinite;
+}
+
+.range-input-wrapper {
+  display: grid !important;
+  grid-template-columns: 4ch 1fr 4ch auto;
+  align-items: center;
+  width: 100%;
+}
+.range-input-wrapper.playable {
+  grid-template-columns: 2ch 2ch 1fr 4ch auto;
+}
+.range-input-wrapper .play-button.play {
+  height: 30%;
+  width: 0;
+  border: 0.5em transparent solid;
+  border-left-color: #000;
+  -webkit-transform: scaleX(1.5);
+  -moz-transform: scaleX(1.5);
+  -ms-transform: scaleX(1.5);
+  -o-transform: scaleX(1.5);
+  transform: scaleX(1.5);
+  transform-origin: 0% 50%;
+  box-sizing: border-box;
+}
+.range-input-wrapper .play-button.pause {
+  height: 1em;
+  width: 1.2em;
+  box-sizing: border-box;
+  position: relative;
+}
+.range-input-wrapper .play-button.pause::after, .range-input-wrapper .play-button.pause::before {
+  content: "";
+  width: 0.3em;
+  left: 0;
+  top: 0;
+  background: #000;
+  height: 100%;
+  position: absolute;
+}
+.range-input-wrapper .play-button.pause::after {
+  left: 50%;
+}
+.range-input-wrapper::before {
+  content: attr(data-min);
+}
+.range-input-wrapper::after {
+  content: "/" attr(data-max);
+}
+.range-input-wrapper input[type=number] {
+  text-align: right;
+  border: none !important;
+  -moz-appearance: textfield;
+  display: table-cell;
+  padding: 0.5em 0;
+  height: 100%;
+  line-height: 2em;
+  opacity: 1;
+}
+.range-input-wrapper input[type=number]::-webkit-outer-spin-button, .range-input-wrapper input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.file-input-wrapper {
+  pointer-events: none;
+  position: relative;
+  height: 100%;
+}
+.file-input-wrapper input {
+  pointer-events: all;
+}
+.file-input-wrapper::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  content: attr(data-file-name);
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  border: 1px #000 solid;
+}
+.file-input-wrapper[data-file-name=""]::before {
+  content: "choose a font file";
+  pointer-events: none;
+}
+
+.radio-input-wrapper {
+  justify-content: space-between;
+  width: 100%;
+}
+.radio-input-wrapper label input {
+  user-select: none;
+  display: none;
+}
+.radio-input-wrapper label input:checked + span {
+  position: relative;
+}
+.radio-input-wrapper label input:checked + span::before {
+  content: "";
+  overflow: hidden;
+  color: #fff;
+  position: absolute;
+  box-sizing: border-box;
+  width: calc( 100% );
+  height: calc( 100%);
+  left: 0;
+  top: 0;
+  z-index: -1000;
+  border: 1px #000 solid;
+  border-radius: 100%;
+}
+
+.text-input-wrapper input {
+  height: 100%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=wrappers.css.map */

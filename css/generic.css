@@ -1,0 +1,321 @@
+@font-face {
+  font-family: rastr;
+  src: url(../fonts/rastr.ttf);
+}
+* {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+header, footer {
+  text-align: center;
+}
+
+header {
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+footer {
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  background: black;
+  color: #fff;
+}
+
+html, body {
+  font-size: 14px;
+  font-family: rastr, helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  background: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+a:active, a:focus, a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+main {
+  min-height: 100vh;
+}
+
+div[role=hr] {
+  z-index: 1000;
+  height: 0px;
+  outline: none;
+  border: none;
+  position: relative;
+  width: 100%;
+}
+div[role=hr]::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 10em;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(#000, transparent, transparent);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@keyframes rollHori {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes rollHoriB {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes rollHori {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+@keyframes rollHoriB {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+.filter {
+  cursor: pointer;
+  height: 12rem;
+  margin: 0 auto;
+  position: relative;
+  font-size: 10rem;
+  line-height: 12rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.filter > span {
+  color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.filter > span:first-child > span {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+.filter > span:last-child {
+  border-radius: 6rem;
+  overflow: hidden;
+  width: 100%;
+  background-image: linear-gradient(var(--secondary-color), white);
+  position: absolute;
+  color: #000;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+}
+.filter > span:last-child > span {
+  position: absolute;
+  transition: inherit;
+  content: attr(data-content);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 100%;
+}
+.filter.play-twice span {
+  transition: top 0.5s ease-in-out;
+}
+.filter.play-twice span::after {
+  transition: inherit;
+}
+.filter.play-twice:hover span {
+  top: 0;
+}
+.filter.play-twice:hover span::after {
+  top: 0;
+}
+.filter.play-twice span:last-child {
+  animation-iteration-count: 2;
+  animation-duration: 0.75s;
+}
+.filter.play-twice span:last-child::after {
+  animation-duration: inherit;
+  animation-iteration-count: inherit;
+}
+.filter.reversed span:last-child {
+  animation-direction: alternate-reverse;
+}
+.filter.reversed span:last-child::after {
+  animation-direction: inherit;
+}
+.filter:not(.play-twice):hover > span:last-child {
+  animation-play-state: paused;
+}
+.filter:not(.play-twice):hover > span:last-child::after {
+  animation-play-state: inherit;
+}
+
+form > #card-message {
+  display: none;
+}
+
+form > .submit-input-wrapper, form > #card-message, form > .button-input-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 80%;
+  gap: 20px;
+}
+
+form.not-updated .submit-input-wrapper {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+#font-form, #payment-form, #font-ui {
+  font-size: 2rem;
+}
+
+#card-message.positive, #card-message.negative {
+  border: 0.5em solid;
+  background: white !important;
+  color: #000;
+  padding: 0.5em;
+  position: relative;
+}
+#card-message.positive::after, #card-message.negative::after {
+  content: "";
+  position: absolute;
+  width: calc( 100% + 1em );
+  height: 0;
+  bottom: -0.5em;
+  left: -0.5em;
+}
+#card-message.positive {
+  border-color: #64ff64;
+}
+#card-message.negative {
+  border-color: #ff6464;
+}
+
+#preview {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  width: 100%;
+  font-size: 10rem;
+  position: relative;
+  height: 10rem;
+  margin-top: 1rem;
+}
+#preview::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+#preview > * {
+  font-size: inherit;
+  position: absolute;
+  top: 0;
+  font-variation-settings: inherit;
+  font-family: inherit;
+}
+
+input, label {
+  outline: none;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+input[type=file] {
+  cursor: pointer;
+}
+
+input[type=text] {
+  cursor: text;
+}
+
+input:not([type=range]) {
+  width: 100%;
+}
+
+input[type=file] {
+  opacity: 0;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0px;
+  outline: none;
+  border-bottom: 1px #000 solid;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: #000;
+  border-radius: 100%;
+  border: none;
+}
+input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: #000;
+  border: none;
+  border-radius: 100%;
+}
+
+#font-form, #font-ui, #payment-form, p#order-info {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#font-form, #font-ui, #payment-form {
+  display: grid;
+  grid-template-columns: 20ch auto;
+  grid-auto-rows: 1.5em;
+  padding: 1em 0;
+  align-items: center;
+}
+
+/*# sourceMappingURL=generic.css.map */
